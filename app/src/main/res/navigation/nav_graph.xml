@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/fragmentCurrencies">
+
+    <fragment
+        android:id="@+id/fragmentCurrencies"
+        android:name="uz.ziyaprof.currency.view.currencies.FragmentCurrencies"
+        android:label="FragmentCurrencies"
+        tools:layout="@layout/fragment_currencies">
+        <action
+            android:id="@+id/action_fragmentCurrencies_to_fragmentCurrencyCalculator"
+            app:destination="@id/fragmentCurrencyCalculator" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentCurrencyCalculator"
+        android:name="uz.ziyaprof.currency.view.currency_calculator.FragmentCurrencyCalculator"
+        android:label="FragmentCurrencyCalculator"
+        tools:layout="@layout/fragment_currency_calculator">
+        <action
+            android:id="@+id/action_fragmentCurrencyCalculator_to_fragmentCurrencies"
+            app:destination="@id/fragmentCurrencies"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/fragmentCurrencies"/>
+    </fragment>
+</navigation>
